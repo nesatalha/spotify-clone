@@ -39,8 +39,8 @@ const SideSearch = () => {
       </div>
       {sideFilteredData.map((Data) => {
         return (
-          <ul>
-            <li className="sideList">{Data.name}</li>
+          <ul className="sideList">
+            <li className="sideListItem">{Data.name}</li>
           </ul>
         );
       })}
