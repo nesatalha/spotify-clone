@@ -7,13 +7,20 @@ $lightGrey: #404040;
   height: calc(100vh - 96px);
   background: linear-gradient(113.83deg, #121212 0.59%, #121212 99.74%);
   display: flex;
-  max-width: 100%;
+  max-width: calc(100vw + 224px);
+  min-height: 500px;
+  // width: 100%;
 }
 
 .sideBar {
   background: $spaceGrey;
+  min-width: 224px;
   width: 224px;
-  height: 100%;
+  // height: calc(100vh - 96px);
+  overflow-y: auto;
+  // overflow-x: hidden;
+  white-space: normal;
+
   .logo {
     svg {
       height: 43.35293960571289px;
@@ -52,8 +59,7 @@ $lightGrey: #404040;
         margin-right: 17px;
       }
     }
-    li.active {
-    }
+
     li:hover {
       background-color: rgb(15, 24, 15);
       opacity: 1;
@@ -89,10 +95,10 @@ $lightGrey: #404040;
     font-size: 1rem;
     // line-height: 34px;
     // transition: all 0.7s;
-    .cardsWrapper {
-      // max-width: 100%;
-      display: flex;
-    }
+    // .cardsWrapper {
+    //   max-width: 100%;
+    //   display: flex;
+    // }
     .card {
       transition: all 0.3s;
       background: $spaceGreyLight;
@@ -111,7 +117,7 @@ $lightGrey: #404040;
   justify-content: space-between;
   background: $spaceGrey;
   height: 56px;
-  width: 100%;
+  // width: 100%;
 }
 
 .searchBar {
@@ -129,10 +135,12 @@ $lightGrey: #404040;
 
 .searchBarSide {
   margin: 1px 10px;
+  padding-top: 5px;
+  padding-left: 3px;
   background: $lightGrey;
   height: 25px;
   border-radius: 12px;
-  align-items: center;
+  align-content: flex-end;
   justify-content: space-between;
 }
 
@@ -185,7 +193,7 @@ $lightGrey: #404040;
   justify-content: flex-start;
   // display: inline-block;
   // overflow: hidden;
-  width: 75rem;
+  width: 100%;
   align-content: space-between;
   overflow-x: auto;
   white-space: normal;
@@ -233,7 +241,13 @@ $lightGrey: #404040;
 
 .sideSearch {
   color: white;
+  overflow-y: hidden;
+  // height: 100%;
   ul {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    height: calc(100vh - 290);
+
     li {
       background: transparent;
       color: white;
@@ -244,11 +258,20 @@ $lightGrey: #404040;
       letter-spacing: 0em;
       text-align: left;
       padding: 3px 15px;
+      // overflow-x: auto;
+      // overflow-y: auto;
+      // white-space: normal;
     }
     li:hover {
       background: transparent;
     }
   }
+  // .sideList{
+  //   overflow-y: auto;
+  //   white-space: normal;
+  //   overflow-x: auto;
+  //   height: 100%;
+  // }
 }
 
 .footer {
@@ -267,6 +290,7 @@ $lightGrey: #404040;
     // text-align: center;
     justify-content: center;
     width: 40%;
+    cursor: not-allowed;
     // display: inline-flex;
   }
   .songDisplay {
@@ -286,6 +310,48 @@ $lightGrey: #404040;
   letter-spacing: 0.15em;
   text-align: left;
   margin-left: 1rem;
+}
+
+.sideList {
+  // height: 100%;
+  overflow-y: scroll;
+}
+
+.controlButtons {
+  display: flex;
+  opacity: 0.2;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 0.3s;
+  cursor: not-allowed;
+
+  .controlButtons:hover {
+    opacity: 1;
+  }
+  .playButton {
+    display: grid;
+    .playButtonHelper {
+      // position: absolute;
+      margin-top: -85%;
+      margin-right: -9%;
+    }
+    .playButton:hover {
+      opacity: 0;
+    }
+  }
+
+  .rewindButton {
+    display: flex;
+    .lineHelper {
+      margin-top: -25%;
+    }
+  }
+  .forwardButton {
+    display: flex;
+    .lineHelper {
+      margin-top: -25%;
+    }
+  }
 }
 
 // .songDisplay{
