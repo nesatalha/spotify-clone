@@ -2,14 +2,16 @@ import { React, useState } from "react";
 import Data from "./data.json";
 
 const FeedContent = (props) => {
-    const filteredData = Data.filter((el) => {
-        if(props.input === ''){
-            return el;
-        }else{
-            return (el.name.toLowerCase().includes(props.input) + el.description.toLowerCase().includes(props.input))
-        }
-    })
-
+  const filteredData = Data.filter((el) => {
+    if (props.input === "") {
+      return el;
+    } else {
+      return (
+        el.name.toLowerCase().includes(props.input) +
+        el.description.toLowerCase().includes(props.input)
+      );
+    }
+  });
 
   return (
     <div className="feedContent">
